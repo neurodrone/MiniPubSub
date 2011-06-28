@@ -10,7 +10,9 @@ Start the Redis server on your machine by running the "./redis-server" program f
 Invoke Subscriber:
 ------------------
 	$ ruby subscriber.rb
+
 OR
+
 	$ ruby subscriber.rb channel_name
 Invoking the subscriber without any arguments will make it start listening for the presence of any/all channels. If you want the subscriber to listen to a specific channel make sure you add the name of that channel as a command line parameter.
 
