@@ -19,6 +19,8 @@ Invoking the subscriber without any arguments will make it start listening for t
 Invoke Publisher:
 -----------------
 	$ ruby publisher.rb 
+
 OR
+
 	$ ruby publisher.rb channel_name user_name
 You can choose not to provide any channel name or user name in which case it will apply a default channel ("channel1") and the string present in the UNIX environment variable called "USER".
