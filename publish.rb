@@ -5,8 +5,8 @@ require "rubygems"
 require "csv"
 require "redis"
 
-channel_title = (ARGV[0].nil?) ? "channel1" : ARGV[0]
-username = (ARGV[1].nil?) ? ENV['USER'] : ARGV[1]
+channel_title = ARGV[0] || "channel1"
+username =  ARGV[1] || ENV['USER']
 
 # Provide a clean stream to the 'loop'
 ARGV.shift until ARGV.empty? 
@@ -22,6 +22,7 @@ redis_pub = Redis.new
 loop do
 	print username + " >> "
 	chat = gets
+	break if chat.chomp.eql?("exit") || chat.chomp.eql?("quit")
 	post = conn_data + [chat]
 	redis_pub.publish( channel_title, post.to_csv)
 end

@@ -1,4 +1,4 @@
-
+*.swp
 .Readme.md.swp
 redis.conf
 redis.9100.log
